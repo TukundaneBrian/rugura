@@ -20,12 +20,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         String message = intent.getStringExtra("MESSAGE");
         TextView messageView =(TextView)findViewById(R.id.messageTextView);
         messageView.setText(message); }
-    public void sendMessage(View view) {
-        EditText message = (EditText)findViewById(R.id.Edit_message);
-    Intent intent = new Intent(this,
-            DisplayMessageActivity.class);
-    intent.putExtra("MESSAGE", message.getText().toString());
-        startActivity(intent); message.setText(""); }
+
 //
     public void onClose(View view) {
         super.finish();

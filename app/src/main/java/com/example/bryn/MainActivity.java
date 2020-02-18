@@ -16,9 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sendMessage (View view) {EditText message = (EditText)findViewById(R.id.message);
-    Toast.makeText (this, "Sending message " + message.getText().toString(),
-            Toast.LENGTH_SHORT).show(); }
+    public void sendMessage(View view) {
+        EditText message = (EditText)findViewById(R.id.Edit_message);
+        Intent intent = new Intent(this,
+                DisplayMessageActivity.class);
+        intent.putExtra("MESSAGE", message.getText().toString());
+        startActivity(intent); message.setText(""); }
 
 
 
