@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">bryn</string>
+    <string name="good">good</string>
+    <!--    <string name="app_name" translatable="false">app_name</string>-->
 </resources>
