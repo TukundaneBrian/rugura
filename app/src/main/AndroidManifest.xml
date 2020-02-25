@@ -11,10 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".tuk1"></activity>
+        <activity android:name=".view"/>
+        <activity android:name=".tuk1" />
         <activity android:name=".tuk" />
         <activity android:name=".DisplayMessageActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

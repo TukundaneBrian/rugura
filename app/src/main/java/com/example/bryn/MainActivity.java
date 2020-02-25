@@ -4,14 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
+//import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
+//import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //    String print,search;
@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.search:
                 startActivity(new Intent(this, tuk.class));
+                return true;
+            case R.id.view:
+                startActivity(new Intent(this, view.class));
                 return true;
             default:
 
