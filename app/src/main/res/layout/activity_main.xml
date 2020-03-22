@@ -61,6 +61,7 @@
         app:layout_constraintVertical_bias="0.434"
         tools:ignore="MissingConstraints" />
 
+
     <Button
         android:id="@+id/sendButton"
         android:layout_width="match_parent"
@@ -69,7 +70,7 @@
         android:layout_marginLeft="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="132dp"
         android:onClick="sendMessage"
         android:text="Send"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,14 +79,50 @@
         app:layout_constraintStart_toEndOf="@+id/Edit_message"
         tools:ignore="MissingConstraints" />
 
+    <ProgressBar
+        android:id="@+id/Bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="6dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/good"
-        app:layout_constraintEnd_toEndOf="@+id/Edit_message"
-        app:layout_constraintStart_toStartOf="@+id/Edit_message"
-        app:layout_constraintTop_toBottomOf="@+id/Edit_message" />
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:onClick="onClick"
+        android:text="Alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendButton"
+        app:layout_constraintVertical_bias="0.494"
+        tools:ignore="OnClick" />
+
+    <EditText
+        android:id="@+id/alar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="seconds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/alarm"
+        app:layout_constraintTop_toBottomOf="@+id/sendButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

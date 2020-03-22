@@ -9,8 +9,17 @@
         android:title="music" />
     <item
         android:id="@+id/search"
-        android:title="search" />
+        android:title="cprogram" />
     <item
         android:id="@+id/view"
         android:title="list" />
+    <item
+        android:id="@+id/email"
+        android:title="gmail" />
+    <item
+        android:id="@+id/call"
+        android:title="call" />
+    <item
+        android:id="@+id/recycler"
+        android:title="recycler view" />
 </menu>

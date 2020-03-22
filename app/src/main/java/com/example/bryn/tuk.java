@@ -19,22 +19,22 @@ public class tuk extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tuk);
-        textView=findViewById(R.id.c);
-        String str ="";
-        try {
-            InputStream inputStream=getAssets().open("cprogram.cpp");
-            int size =inputStream.available();
-            byte[] buffer =new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            str =new String(buffer);
+            textView=findViewById(R.id.c);
+            String str ="";
+            try {
+                InputStream inputStream=getAssets().open("cprogram.cpp");
+                int size =inputStream.available();
+                byte[] buffer =new byte[size];
+                inputStream.read(buffer);
+                inputStream.close();
+                str =new String(buffer);
+
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+    textView.setText((CharSequence)str);
 
         }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-textView.setText((CharSequence)str);
-
-    }
 
 }
