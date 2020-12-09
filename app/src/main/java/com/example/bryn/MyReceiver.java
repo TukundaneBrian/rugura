@@ -16,7 +16,7 @@ public class MyReceiver extends BroadcastReceiver  {
             Toast toast=Toast.makeText(context,"dont panilk but ur time z up",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER,0,0);
             toast.show();
-            // vibrate
+
             Vibrator vibrator=(Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(3000);
     }

@@ -58,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void send(View view1) {
+        EditText message = (EditText) findViewById(R.id.sav);
+        Intent intent = new Intent(this,
+                DisplayMessageActivity.class);
+        intent.putExtra("MESSAGE", message.getText().toString());
+        startActivity(intent);
+        message.setText("");
+    }
+
+
 //public boolean onC
 //        getMenuInflater().inflate(R.menu.more,menu);
 //    return true;
@@ -79,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"alarm set in"+ b +"seconds",Toast.LENGTH_LONG).show();
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@ NonNull MenuItem item) {
         int itemId1 = item.getItemId();
         switch (itemId1) {
             case R.id.music:
@@ -91,8 +101,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, tuk.class));
                 return true;
             case R.id.view:
+            case R.id.location:
                 startActivity(new Intent(this, view.class));
                 return true;
+
+
             case R.id.call:
                 try {
                     // check for call permissions
@@ -120,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 return true;
+            // for creating email
             case R.id.email:
                 Intent intent2 = new Intent(Intent.ACTION_SEND);
                 intent2.setData(Uri.parse("mailto:"));
