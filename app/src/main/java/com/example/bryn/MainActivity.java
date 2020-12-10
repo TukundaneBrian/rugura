@@ -100,9 +100,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.search:
                 startActivity(new Intent(this, tuk.class));
                 return true;
+
             case R.id.view:
-            case R.id.location:
                 startActivity(new Intent(this, view.class));
+                return true;
+            case R.id.location:
+                startActivity(new Intent(this, Loc.class));
                 return true;
 
 

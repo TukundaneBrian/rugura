@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
-public class location extends Activity {
+public class Loc extends Activity {
 
     private TextView latitude;
     private TextView longitude;
@@ -25,7 +25,6 @@ public class location extends Activity {
     private TextView provText;
     private LocationManager locationManager;
     private String provider;
-    private location.MyLocationListener mylistener;
     private Criteria criteria;
 
     /** Called when the activity is first created. */
@@ -42,9 +41,9 @@ public class location extends Activity {
         fineAcc = (CheckBox) findViewById(R.id.fineAccuracy);
         choose = (Button) findViewById(R.id.chooseRadio);
 
-        // Get the location manager
+        // Get the Loc manager
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        // Define the criteria how to select the location provider
+        // Define the criteria how to select the Loc provider
         criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_COARSE);   //default
 
@@ -66,19 +65,19 @@ public class location extends Activity {
         // get the best provider depending on the criteria
         provider = locationManager.getBestProvider(criteria, false);
 
-        // the last known location of this provider
+        // the last known Loc of this provider
         @SuppressLint("MissingPermission") Location location = locationManager.getLastKnownLocation(provider);
 
-        mylistener = new location.MyLocationListener();
+        MyLocationListener mylistener = new MyLocationListener();
 
         if (location != null) {
             mylistener.onLocationChanged(location);
         } else {
-            // leads to the settings because there is no last known location
+            // leads to the settings because there is no last known Loc
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(intent);
         }
-        // location updates: at least 1 meter and 200millsecs change
+        // Loc updates: at least 1 meter and 200millsecs change
         locationManager.requestLocationUpdates(provider, 200, 1, mylistener);
     }
 
@@ -86,31 +85,31 @@ public class location extends Activity {
 
         @Override
         public void onLocationChanged(Location location) {
-            // Initialize the location fields
+            // Initialize the Loc fields
             latitude.setText("Latitude: "+String.valueOf(location.getLatitude()));
             longitude.setText("Longitude: "+String.valueOf(location.getLongitude()));
             provText.setText(provider + " provider has been selected.");
 
-            Toast.makeText(location.this,  "Location changed!",
+            Toast.makeText(Loc.this,  "Location changed!",
                     Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
-            Toast.makeText(location.this, provider + "'s status changed to "+status +"!",
+            Toast.makeText(Loc.this, provider + "'s status changed to "+status +"!",
                     Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onProviderEnabled(String provider) {
-            Toast.makeText(location.this, "Provider " + provider + " enabled!",
+            Toast.makeText(Loc.this, "Provider " + provider + " enabled!",
                     Toast.LENGTH_SHORT).show();
 
         }
 
         @Override
         public void onProviderDisabled(String provider) {
-            Toast.makeText(location.this, "Provider " + provider + " disabled!",
+            Toast.makeText(Loc.this, "Provider " + provider + " disabled!",
                     Toast.LENGTH_SHORT).show();
         }
     }
