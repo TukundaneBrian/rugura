@@ -22,7 +22,7 @@
             android:name=".MyReceiver"
             android:enabled="true"
             android:exported="true" />
-         <activity android:name=".Loc" />
+
         <activity android:name=".view" />
         <activity android:name=".tuk1" />
         <activity android:name=".tuk" />
@@ -35,6 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+    <service android:name=".MyService"/>
     </application>
 
 </manifest>
