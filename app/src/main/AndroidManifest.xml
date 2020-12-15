@@ -20,9 +20,10 @@
 
         <receiver
             android:name=".MyReceiver"
+
             android:enabled="true"
             android:exported="true" />
-
+        <activity android:name=".Internal" />
         <activity android:name=".view" />
         <activity android:name=".tuk1" />
         <activity android:name=".tuk" />

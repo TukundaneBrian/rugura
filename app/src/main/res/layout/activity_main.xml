@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <TextView
         android:id="@+id/textView"
@@ -26,9 +26,11 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.193" />
+
 
     <TextView
         android:id="@+id/textView3"
@@ -36,8 +38,6 @@
         android:layout_width="176dp"
         android:layout_height="36dp"
         android:layout_marginTop="75dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
 
         android:text="2018/BIT/102/PS"
         android:textSize="20dp"
@@ -46,7 +46,6 @@
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
 
     <EditText
         android:id="@+id/Edit_message"
@@ -75,7 +74,7 @@
         android:layout_marginLeft="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="328dp"
+        android:layout_marginBottom="436dp"
         android:onClick="sendMessage"
         android:text="Send"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -142,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sav"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/save"
@@ -179,19 +178,24 @@
         android:text="start service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonstop"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.286" />
 
     <Button
         android:id="@+id/buttonstop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="stop service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/sav"
-        app:layout_constraintTop_toBottomOf="@+id/file" />
+        app:layout_constraintTop_toBottomOf="@+id/file"
+        app:layout_constraintVertical_bias="0.072" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

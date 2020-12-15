@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -25,13 +26,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import static android.view.View.*;
+
 //import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
-private Button start,stop;
+//private Button start,stop;
+//private static final String FILE_NAME="example.txt";
+//EditText m;
 
-    //    String print,search;
 
     private MyReceiver receive= new MyReceiver() {
         @Override
@@ -47,33 +57,12 @@ private Button start,stop;
     };
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registerReceiver(receive,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
-        start = (Button) findViewById(R.id.buttonstart);
-        start.setOnClickListener(new OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this,MyService.class);
-                startService(intent);
-            }
-        });
-         stop=(Button) findViewById(R.id.buttonstop) ;
-        stop.setOnClickListener(new OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,MyService.class);
-                stopService(intent);
-            }
-        });
-
-
-
-
 
     }
 
@@ -98,10 +87,7 @@ private Button start,stop;
     }
 
 
-//public boolean onC
-//        getMenuInflater().inflate(R.menu.more,menu);
-//    return true;
-//}
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,13 +104,8 @@ private Button start,stop;
         alarmManager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+(b*1000),pendingIntent);
         Toast.makeText(this,"alarm set in"+ b +"seconds",Toast.LENGTH_LONG).show();
 
-
-        if(view==start){
-            startService(new Intent(this,MyService.class));
-        }else if(view==stop){
-            stopService(new Intent(this,MyService.class));
-        }
     }
+
 
     public boolean onOptionsItemSelected(@ NonNull MenuItem item) {
         int itemId1 = item.getItemId();
@@ -140,6 +121,9 @@ private Button start,stop;
 
             case R.id.view:
                 startActivity(new Intent(this, view.class));
+                return true;
+            case R.id.inte:
+                startActivity(new Intent(this, Internal.class));
                 return true;
 
 

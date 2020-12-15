@@ -22,7 +22,10 @@
     <item
         android:id="@+id/recycler"
         android:title="recycler view" />
+    />
+
     <item
-        android:id="@+id/location"
-        android:title="location" />
+        android:id="@+id/inte"
+        android:title="internal storage" />
+
 </menu>
