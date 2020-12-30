@@ -38,9 +38,9 @@ import static android.view.View.*;
 //import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
-//private Button start,stop;
-//private static final String FILE_NAME="example.txt";
-//EditText m;
+private Button start,stop;
+private static final String FILE_NAME="example.txt";
+EditText m;
 
 
     private MyReceiver receive= new MyReceiver() {
@@ -63,6 +63,24 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registerReceiver(receive,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
+        start = findViewById(R.id.buttonstart);
+        start.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MyService.class);
+                startService(intent);
+            }
+        });
+          stop = findViewById(R.id.buttonstop);
+        stop.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MyService.class);
+                stopService(intent);
+            }
+        });
 
     }
 
@@ -96,6 +114,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     }
 
     public void onClick(View view){
+
         EditText editText=findViewById(R.id.alar);
         int b=Integer.parseInt(editText.getText().toString());
         Intent intent=new Intent(getApplicationContext(),MyReceiver.class);
@@ -104,7 +123,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         alarmManager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+(b*1000),pendingIntent);
         Toast.makeText(this,"alarm set in"+ b +"seconds",Toast.LENGTH_LONG).show();
 
+
     }
+
+
 
 
     public boolean onOptionsItemSelected(@ NonNull MenuItem item) {
@@ -124,6 +146,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 return true;
             case R.id.inte:
                 startActivity(new Intent(this, Internal.class));
+                return true;
+            case R.id.ext:
+                startActivity(new Intent(this, External.class));
                 return true;
 
 
@@ -171,4 +196,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+
 }
+
+
+

@@ -26,7 +26,7 @@ public class Internal extends AppCompatActivity {
         mEditText=findViewById(R.id.edit_text);
     }
 
-    public void save(View v){
+    public void button_save(View v){
         String text = mEditText.getText().toString();
         FileOutputStream fos = null;
 
@@ -51,7 +51,7 @@ public class Internal extends AppCompatActivity {
         }
     }
 
-    public void load(View v){
+    public void button_load(View v){
         FileInputStream fis=null;
         try {
             fis =openFileInput(FILE_NAME);

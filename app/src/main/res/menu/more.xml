@@ -27,5 +27,8 @@
     <item
         android:id="@+id/inte"
         android:title="internal storage" />
+    <item
+        android:id="@+id/ext"
+        android:title="External storage" />
 
 </menu>

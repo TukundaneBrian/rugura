@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edit_text"
+        android:id="@+id/ex"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -22,11 +22,11 @@
         android:layout_marginRight="169dp"
         android:layout_marginBottom="288dp"
         android:text="Save"
-        android:onClick="button_save"
+        android:onClick="save"
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/button_load"
+        android:id="@+id/load"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -36,7 +36,7 @@
         android:layout_marginRight="175dp"
         android:layout_marginBottom="140dp"
         android:text="load"
-        android:onClick="button_load"
+        android:onClick="load"
         tools:ignore="OnClick" />
 
 
